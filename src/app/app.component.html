@@ -1,9 +1,10 @@
+<h1>Certificar PDFs</h1>
 <div class="container" appDnd (fileDropped)="onFileDropped($event)">
-  <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+  <input type="file" accept="application/pdf" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
   <img src="assets/img/dnd/ic-upload-file.svg" alt="">
-  <h3>Drag and drop file here</h3>
-  <h3>or</h3>
-  <label for="fileDropRef">Browse for file</label>
+  <h3>Arrastar para aqui</h3>
+  <h3>ou</h3>
+  <label for="fileDropRef">Procurar ficheiro</label>
 </div>
 <div class="files-list">
   <div class="single-file" *ngFor="let file of files; let i = index">
@@ -19,4 +20,7 @@
     </div>
     <img src="assets/img/dnd/ic-delete-file.svg" class="delete" width="20px" alt="file" (click)="deleteFile(i)">
   </div>
+</div>
+<div>
+  <button type="button" (click)="certificatePDF()">Certificar Pdfs</button>
 </div>
